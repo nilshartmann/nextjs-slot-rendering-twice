@@ -1,10 +1,12 @@
 import Link from "next/link";
 
-export default function UserPage() {
+type UserDetailPageProps = {
+  params: { userId: string };
+};
+export default function UserDetailPage({ params }: UserDetailPageProps) {
   return (
     <div>
-      <h1>User Page</h1>
-
+      <h1>User Details for User with id {params.userId}</h1>
       <ul>
         <li>
           <Link href={"/user/1"} prefetch={false}>
